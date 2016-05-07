@@ -1,0 +1,36 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: Cheesecake
+  quantity: 250
+  quantity_type: gr
+  price: 8
+  bill_id: 2
+
+two:
+  name: Orange Juice
+  quantity: 2
+  quantity_type: l
+  price: 3.56
+  bill_id: 2
+
+three:
+  name: Beef meat
+  quantity: 2.5
+  quantity_type: kg
+  price: 10.98
+  bill_id: 1
+
+four:
+  name: Fresh Salad
+  quantity: 1
+  quantity_type: u
+  price: 2.99
+  bill_id: 1
+
+five:
+  name: Lemon Soda
+  quantity: 10
+  quantity_type: l
+  price: 9.99
+  bill_id: 1

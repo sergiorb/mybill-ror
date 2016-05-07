@@ -1,0 +1,16 @@
+<p>
+  <strong>Name:</strong>
+  <%= @bill.name %>
+</p>
+
+<p>
+	<strong>Buy date:</strong> <%= @bill.buy_date %>
+</p>
+
+<p>
+	<strong>Shop:</strong> <%= @bill.shop.name %>
+</p>
+
+<%= link_to 'Show Products', bill_products_path(@bill) %> |
+<%= link_to 'Edit bill', edit_bill_path(@bill) %> |
+<%= link_to 'Back', bills_path %>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mybill</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%= link_to 'Shops', shops_url %>
+<%= link_to 'Bills', bills_url %>
+<%= link_to 'Products', products_url %>
+
+<%= yield %>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<%= form_for @bill do |f| %>
+ 
+  <% if @bill.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@bill.errors.count, "error") %> prohibited
+        this bill from being saved:
+      </h2>
+      <ul>
+        <% @bill.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %><br>
+  </p>
+
+  <p>
+    <%= f.label :buy_date %><br>
+    <%= f.date_select :buy_date %><br>
+  </p>
+
+  <p>
+    <%= f.label :shop %><br>
+    <%= f.select :shop_id, options_for_select(@shops.map{ |s| [s.name, s.id] }, @bill.shop_id) %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+ 
+<% end %>

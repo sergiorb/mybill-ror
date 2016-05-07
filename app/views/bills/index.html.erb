@@ -1,0 +1,26 @@
+<h1>Listing bills</h1>
+
+<%= link_to 'New bill', new_bill_path %>
+ 
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Shop</th>
+    <th>Amount</th>
+    <th colspan="5">Options</th>
+  </tr>
+ 
+  <% @bills.each do |bill| %>
+    <tr>
+      <td><%= bill.buy_date.to_formatted_s(:month_day_year) %></td>
+      <td><%= bill.shop.name %></td>
+      <td><%= bill.amount %></td>
+      <td><%= link_to 'Show products', bill_products_path(bill) %></td>
+      <td><%= link_to 'Show bill', bill_path(bill) %></td>
+      <td><%= link_to 'Edit', edit_bill_path(bill) %></td>
+      <td><%= link_to 'Destroy', bill_path(bill),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>

@@ -1,0 +1,46 @@
+<%= form_for @product do |f| %>
+ 
+  <% if @product.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@product.errors.count, "error") %> prohibited
+        this product from being saved:
+      </h2>
+      <ul>
+        <% @product.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %><br>
+  </p>
+
+  <p>
+    <%= f.label :quantity %><br>
+    <%= f.number_field :quantity, :step => 'any' %><br>
+  </p>
+
+  <p>
+    <%= f.label :quantity_type %><br>
+    <%= f.text_field :quantity_type %><br>
+  </p>
+
+  <p>
+    <%= f.label :price %><br>
+    <%= f.number_field :price, :step => 'any' %><br>
+  </p>
+
+  <p>
+    <%= f.label :bill %><br>
+    <%= f.select :bill_id, options_for_select(@bills.map{ |s| [s.shop.name + ' - ' + s.buy_date.to_formatted_s(:month_day_year), s.id] }, @product.bill_id) %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+ 
+<% end %>

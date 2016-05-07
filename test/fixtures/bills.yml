@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: Monthly Grocery Buy
+  buy_date: 2016-05-07 19:51:31
+  shop_id: 1
+
+two:
+  name: Susan Party
+  buy_date: 2016-05-07 19:51:31
+  shop_id: 2
